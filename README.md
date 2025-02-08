@@ -14,15 +14,8 @@ The Recipe App is a web application built using ReactJS and Redux that allows us
 ## Technologies Used
 - **Frontend:** ReactJS, Redux
 - **Styling:** CSS/SCSS or styled-components (choose one based on preference)
-
-## API Integration
-The application fetches recipe data from the **Edamam API**. Example API request:
-```
-https://api.edamam.com/search?q=pizza&app_id=*********&app_key=************&from=0&to=50
-```
-
 ## Installation
-1. Clone the repository:
+1. Clone the repository: https://github.com/gitkrishna07/recipies
 ```
 
 ```
@@ -56,5 +49,6 @@ Feel free to submit pull requests or open issues for suggestions and improvement
 
 ## License
 This project is licensed under the MIT License.
-
+### Outputvideo
+Attached a sample video of autput
 
