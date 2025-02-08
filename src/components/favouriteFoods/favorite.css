@@ -1,0 +1,18 @@
+button{
+    background-color:#bc8738;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+  }
+h2{
+color: #bc8738;
+font-weight: bolder;
+font-size: larger;
+text-decoration: none;
+  }
+  p{
+  color: rgb(46, 44, 51);
+  }
