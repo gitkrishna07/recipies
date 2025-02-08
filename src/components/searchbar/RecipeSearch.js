@@ -5,6 +5,7 @@ import "./recipesearch.css";
 const RecipeSearch = () => {
   const URL_BY_NAME = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
   const URL_BY_LETTER = "https://www.themealdb.com/api/json/v1/1/search.php?f=";
+  const URL_ALL = "https://www.themealdb.com/api/json/v1/1/search.php?s="; // Fetch all recipes
 
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,22 +15,32 @@ const RecipeSearch = () => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(savedFavorites);
   }, []);
-  const handleSearch = async (term) => {
-    setSearchTerm(term);
 
-    if (term.length === 0) {
-      setRecipes([]);
-      return;
-    }
+  useEffect(() => {
+    fetchRecipes(searchTerm);
+  }, [searchTerm]);
 
+  const fetchRecipes = async (term) => {
     try {
-      const isSingleLetter = term.length === 1;
-      const res = await fetch(isSingleLetter ? `${URL_BY_LETTER}${term}` : `${URL_BY_NAME}${term}`);
+      let url;
+      if (term.length === 0) {
+        url = URL_ALL;
+      } else if (term.length === 1) {
+        url = `${URL_BY_LETTER}${term}`;
+      } else {
+        url = `${URL_BY_NAME}${term}`;
+      }
+
+      const res = await fetch(url);
       const data = await res.json();
       setRecipes(data.meals || []);
     } catch (error) {
       console.error("Error fetching recipes:", error);
     }
+  };
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
   };
 
   const toggleFavorite = (recipe) => {
@@ -73,9 +84,9 @@ const RecipeSearch = () => {
                 </button>
               </div>
             ))
-          ) : searchTerm.length > 0 ? (
-            <p className="noResults">No recipes found for "{searchTerm}"</p>
-          ) : null}
+          ) : (
+            <p className="noResults">No recipes found</p>
+          )}
         </div>
       </div>
     </div>
@@ -83,3 +94,4 @@ const RecipeSearch = () => {
 };
 
 export default RecipeSearch;
+
