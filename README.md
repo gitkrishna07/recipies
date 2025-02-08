@@ -14,6 +14,15 @@ The Recipe App is a web application built using ReactJS and Redux that allows us
 ## Technologies Used
 - **Frontend:** ReactJS, Redux
 - **Styling:** CSS/SCSS or styled-components (choose one based on preference)
+## Npm List
+npm list
+recipies@0.1.0 C:\Users\Lenovo\OneDrive\Desktop\ASSESSMENT\recipies        
+├── cra-template@1.2.0
+├── react-dom@19.0.0
+├── react-icons@5.4.0
+├── react-router-dom@7.1.5
+├── react-scripts@5.0.1
+└── react@19.0.0
 ## Installation
 1. Clone the repository: https://github.com/gitkrishna07/recipies
 ```
