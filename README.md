@@ -24,7 +24,8 @@ recipies@0.1.0 C:\Users\Lenovo\OneDrive\Desktop\ASSESSMENT\recipies
 ├── react-scripts@5.0.1
 └── react@19.0.0
 ## Installation
-1. Clone the repository: https://github.com/gitkrishna07/recipies
+1. Clone the repository:
+https://github.com/gitkrishna07/recipies
 ```
 
 ```
